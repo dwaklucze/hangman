@@ -4,10 +4,10 @@ var gulp = require('gulp'),
     connect = require('gulp-connect'),
     /**/
     javascriptFiles = [
-    	  __dirname + '/dist/libs.js',
-        __dirname + '/src/scripts/main.js',
-        __dirname + '/src/scripts/config.js',
-        __dirname + '/src/scripts/**/*.js',
+    	  'dist/libs.js',
+        'src/scripts/main.js',
+        'src/scripts/config.js',
+        'src/scripts/**/*.js',
     ];
 
 

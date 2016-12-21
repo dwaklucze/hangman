@@ -4,7 +4,7 @@
   "description": "Recruitment task",
   "main": "src/index.js",
   "scripts": {
-    "postinstall": "gulp watch --silent --color"
+    "postinstall": "gulp watch --color"
   },
   "repository": {
     "type": "git",

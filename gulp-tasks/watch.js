@@ -1,9 +1,10 @@
 var gulp = require('gulp');
 
 
-gulp.task('watch', ['build'], function(){
-	gulp.watch(__dirname + '/src/scripts/**/*.js', ['scripts']);
-	gulp.watch(__dirname + '/src/styles/**/*.scss', ['styles']);
-	gulp.watch(__dirname + '/src/views/**/*.jade', ['templates']);
-	gulp.watch(__dirname + '/src/assets/**/*.*', ['build']);
+
+gulp.task('watch', ['build'], function() {
+    gulp.watch('src/scripts/**/*.js', { cwd: './' }, ['scripts']);
+    gulp.watch('src/styles/**/*.scss', { cwd: './' }, ['styles']);
+    gulp.watch('src/views/**/*.jade', { cwd: './' }, ['templates']);
+    gulp.watch('src/assets/**/*.*', { cwd: './' }, ['build']);
 })

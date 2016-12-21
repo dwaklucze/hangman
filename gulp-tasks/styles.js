@@ -22,7 +22,7 @@ gulp.task('styles', function() {
         cssnano(cssnanoSettings)
     ];
 
-    return gulp.src(__dirname + '/src/styles/main.scss')
+    return gulp.src('src/styles/main.scss')
         .pipe(sourcemaps.init())
         .pipe(sass.sync().on('error', sass.logError))
         .pipe(postcss(processors))

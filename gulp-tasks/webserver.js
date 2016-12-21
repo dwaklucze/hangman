@@ -4,6 +4,7 @@ var gulp = require('gulp'),
 gulp.task('webserver', function() {
     connect.server({
     root: ['dist', 'src/assets'],
-    livereload: true
+    livereload: true,
+    fallback: 'dist/index.html'
     })
 });
