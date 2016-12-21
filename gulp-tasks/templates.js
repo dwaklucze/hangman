@@ -5,7 +5,7 @@ var gulp = require('gulp'),
 gulp.task('templates', function() {
     var YOUR_LOCALS = {};
 
-    gulp.src('./src/views/**/*.jade')
+    gulp.src(__dirname + '/src/views/**/*.jade')
         .pipe(jade({
             client: false,
             pretty: true
