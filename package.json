@@ -1,0 +1,38 @@
+{
+  "name": "hangman",
+  "version": "1.0.0",
+  "description": "Recruitment task",
+  "main": "src/index.js",
+  "scripts": {
+    "postinstall": "gulp watch --silent --color"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/dwaklucze/hangman.git"
+  },
+  "author": "Mike Porydzaj",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dwaklucze/hangman/issues"
+  },
+  "homepage": "https://github.com/dwaklucze/hangman#readme",
+  "devDependencies": {
+    "angular": "^1.6.0",
+    "autoprefixer": "^6.5.4",
+    "cssnano": "^3.9.1",
+    "gulp": "^3.9.1",
+    "gulp-clean": "^0.3.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-connect": "^5.0.0",
+    "gulp-jade": "^1.1.0",
+    "gulp-postcss": "^6.2.0",
+    "gulp-sass": "^3.0.0",
+    "gulp-sourcemaps": "^1.9.1",
+    "gulp-strip-comments": "^2.4.3",
+    "lodash": "^4.17.2",
+    "postcss-discard-duplicates": "^2.0.2",
+    "postcss-discard-unused": "^2.2.3",
+    "require-dir": "^0.3.1",
+    "uncss": "^0.14.1"
+  }
+}
