@@ -19,6 +19,12 @@
 
 
         function verifyScore(key, currentWord) {
+
+            var regExp = new RegExp("[a-zA-Z]");
+            if(!regExp.test(key)) {
+              return;
+            }
+
             guessedLetter = _.indexOf(currentWord, key);
 
             /* user has failed with guessing, so we will save letter he failed with and then disable of picking her again */
