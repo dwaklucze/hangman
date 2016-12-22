@@ -1,3 +1,3 @@
-window.app = angular.module('app', []);
+'use strict';
 
-console.log('hmmm');
+window.app = angular.module('app', []);
