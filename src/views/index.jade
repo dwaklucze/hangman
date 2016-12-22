@@ -9,8 +9,6 @@ html(ng-app="app")
     link(href='css/main.css', rel='stylesheet')
     script(src="bundle.js" defer)
 
-  body(ng-controller="MainController")
-    main.wrapper
-      .wrapper-inner
-        p.
-          uiouiuoi
+  body(ng-controller="MainController as $main")
+    main.wrapper(ui-view="")
+

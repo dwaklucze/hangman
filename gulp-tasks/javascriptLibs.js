@@ -4,7 +4,8 @@ var gulp = require('gulp'),
     strip = require('gulp-strip-comments'),
     /**/
     javascriptLibraries = [
-    	'node_modules/angular/angular.js',
+      'node_modules/angular/angular.js',
+    	'node_modules/angular-ui-router/release/angular-ui-router.min.js',
     	'node_modules/lodash/lodash.js'
     ];
 

@@ -1,0 +1,46 @@
+@import "../_variables";
+.hint {
+    text-align: center;
+    text-transform: uppercase;
+    color: $color-grey;
+    font-family: 'Aller';
+    font-size: 18px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0.5em;
+    max-width: 600px
+}
+
+.result {
+    margin: 0.3rem auto;
+    bottom: 1rem;
+    left: 0;
+    right: 0;
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    ul {
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+        li {
+            display: inline-block;
+            vertical-align: top;
+            background: rgba(0, 0, 0, 0.1);
+            color: white;
+            font-family: 'Aller Bold';
+            margin-right: 0.5rem;
+            border-radius: 0.2rem;
+            min-height: 3em;
+            line-height: 3em;
+            width: 2.5em;
+            &.guessed {
+                background: #53555d;
+            }
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+    }
+}

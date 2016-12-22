@@ -1,0 +1,58 @@
+@import "../_variables";
+
+.fails {
+  display: inline-block;
+  max-width: 40%;
+  width: 100%;
+  float: right;
+  margin-right: 2em;
+  margin-top: 0.5em;
+
+  p {
+
+      margin-right: 1em;
+      margin-bottom: 1em;
+
+
+      text-transform: uppercase;
+      font-size: calc(#{$taken-word-size} * 0.4);
+
+      font-family: 'Aller Bold';
+
+      color: $color-grey;
+  }
+
+
+  ul {
+
+    li {
+
+      display: inline-block;
+
+
+      text-transform: uppercase;
+      font-size: $taken-word-size;
+      font-family: 'Aller Bold';
+
+
+      color: $color-blue;
+    }
+
+  }
+
+
+}
+.success-key {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 90px;
+
+  font-family: 'Aller Bold';
+  color: green;
+
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
