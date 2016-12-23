@@ -12,7 +12,6 @@
       var vm = this;
       this.$onInit = function(){
 
-        console.log(wordsService);
         vm.result = userService.score.result;
         vm.hint = wordsService.currentWord.hint;
 

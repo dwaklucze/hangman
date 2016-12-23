@@ -13,13 +13,24 @@
                 resolve: {
                     gameWord: function(wordsService, userService) {
                         return wordsService.getWord().then(function(word) {
-
                             word = word.word;
                             var result = userService.score.result = new Array(word.length),
                                 randomNumbers = getRandoms(word, 4);
 
+                                /* this one is only for developers or `hackers`... ;-) just for dev purpose */
+                                console.info(word.join(''));
+
+
+                                /* check for whitespaces and for '-' char */
+                                _.filter(word, function(item, index){
+                                    if( (item === '-') || (item === ' ') ) {
+                                      result[key] = item;
+                                    }
+                                })
+
+                                /* push random word to result array to achieve N completed letters in current word */
                                 return _.filter(randomNumbers, function(item, index) {
-                                return  result[item] = word[item];
+                                  return  result[item] = word[item];
                                 })
                         });
 
