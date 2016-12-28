@@ -1,4 +1,9 @@
 @font-face {
-    font-family: Aller;
-    src: url(../assets/fonts/AllerDisplay.ttf);
+    font-family: 'Aller Bold';
+    src: url('../fonts/AllerDisplay.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Aller';
+    src: url('../fonts/aller.light.ttf') format('truetype');
 }

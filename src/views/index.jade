@@ -1,0 +1,14 @@
+doctype
+html(ng-app="app")
+
+  head
+    title Hangman game
+
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+
+    link(href='css/main.css', rel='stylesheet')
+    script(src="bundle.js" defer)
+
+  body(ng-controller="MainController as $main")
+    main.wrapper(ui-view="")
+

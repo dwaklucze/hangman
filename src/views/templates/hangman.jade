@@ -1,0 +1,3 @@
+div.hangman(ng-if="$ctrl.currentFail !== 0")
+  ul.character
+    li(ng-repeat="part in $ctrl.body" ng-class="part" ng-if="$ctrl.currentFail-1 >= $index+1")

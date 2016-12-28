@@ -1,0 +1,3 @@
+.hint(ng-bind="$ctrl.hint" ng-if="$ctrl.hint")
+ul
+  li(ng-repeat="item in $ctrl.result track by $index" ng-bind="item" ng-class="{'guessed': item.length}")

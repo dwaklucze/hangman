@@ -1,0 +1,20 @@
+.wrapper-inner(tabindex="0", id="game", ng-keyup="$game.keyPress($event)")
+
+  // display correctly inserted letter
+  span(ng-bind="$game.success" ng-show="$game.success" class="success-key")
+
+  // display failed letters
+  div(class="fails")
+    p(ng-if="$game.score.fails.length") You missed:
+    ul
+      li(ng-repeat="letter in $game.score.fails" ng-bind="letter")
+
+
+  // display current word
+  div(class="result")
+    result(word="$game.word")
+
+  hangman
+  .status(ng-class="{'failure': $game.endWithFailure, 'success': $game.endWithSuccess}")
+    div(ng-if="$game.endWithFailure" ng-include="'templates/result/failure.html'")
+    div(ng-if="$game.endWithSuccess" ng-include="'templates/result/success.html'")
