@@ -1,14 +1,3 @@
-div.hangman
+div.hangman(ng-if="$ctrl.currentFail !== 0")
   ul.character
-    li.bar
-    li.head
-    li.neck
-    li.corpus
-    li.right-arm
-    li.left-arm
-    li.right-hand
-    li.left-hand
-    li.right-leg
-    li.left-leg
-    li.right-foot
-    li.left-foot
+    li(ng-repeat="part in $ctrl.body" ng-class="part" ng-if="$ctrl.currentFail-1 >= $index+1")

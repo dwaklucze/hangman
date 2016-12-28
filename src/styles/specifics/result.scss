@@ -1,4 +1,6 @@
 @import "../_variables";
+@import "../main/mixins";
+
 .hint {
     text-align: center;
     text-transform: uppercase;
@@ -8,7 +10,8 @@
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 0.5em;
-    max-width: 600px
+    max-width: 600px;
+    padding: 1rem;
 }
 
 .result {
@@ -41,6 +44,43 @@
             &:last-child {
                 margin-right: 0;
             }
+            @include respond-to(728px) {
+              width: 6.5vw;
+            }
+        }
+    }
+}
+
+.status {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 10;
+    text-align: center;
+    font-size: 1.3rem;
+    &.failure {
+        @include status;
+    }
+    &.success {
+        @include status;
+    }
+    .button {
+        text-transform: uppercase;
+        color: orange;
+        border-radius: 1.5rem;
+        border: 4px dashed orange;
+        padding: 15px;
+        padding-left: 55px;
+        padding-right: 55px;
+        position: relative;
+        display: inline-block;
+        font-family: 'Aller Bold' !important;
+        cursor: pointer;
+        transition: background .3s ease;
+        &:hover {
+            background: rgba($color-bg, 0.4);
         }
     }
 }

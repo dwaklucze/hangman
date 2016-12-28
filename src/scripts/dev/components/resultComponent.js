@@ -12,10 +12,14 @@
       var vm = this;
       this.$onInit = function(){
 
-        vm.result = userService.score.result;
-        vm.hint = wordsService.currentWord.hint;
+        var result = userService.score.result,
+        hint = wordsService.currentWord.hint,
+        fullWord = wordsService.currentWord.full;
 
+        vm.result = result;
 
+        /* show hint only if it does not contains result word */
+        vm.hint = !hint.toUpperCase().includes(fullWord) ? hint : false;
       }
 
   }

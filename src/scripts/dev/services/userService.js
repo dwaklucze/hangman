@@ -1,7 +1,7 @@
 (function() {
 
 
-    function Service(wordsService) {
+    function Service(wordsService, $timeout) {
         /* initialize data to work with */
 
         var local = this,
@@ -10,24 +10,30 @@
             failureSound = new Audio('sound/false.mp3');
 
 
-        local.verifyScore = verifyScore;
+        local.verifyKeyInput = verifyKeyInput;
         local.score = {};
         local.score.fails = [];
         local.score.result = [];
 
 
 
-        function verifyScore(key, currentWord) {
+        function verifyKeyInput(key, currentWord) {
 
-            /* allow characters only */
-            var regExp = new RegExp("[a-zA-Z]");
-            if(!regExp.test(key)) {
-              return;
+            var pressedCharacter = key.key,
+                keyCode = key.keyCode;
+
+            /* break script when user press wrong key */
+            if (keyCode < 65 || keyCode > 95) {
+                console.log('Game interrupted due to wrong key press.');
+                return;
             }
 
+            key = pressedCharacter.toUpperCase();
+
+
             /* check if letter is guessed/suggested already and does exists in fails array to stop action */
-            if(_.indexOf(local.score.fails, key) !== -1) {
-              return;
+            if (_.indexOf(local.score.fails, key) !== -1) {
+                return;
             }
 
 
@@ -38,23 +44,31 @@
                 /* check if array of missed items is empty, otherwise we will count all missed inputs */
                 local.score.fails.push(key);
 
-                failureSound.play();
+                /* play sound */
+                $timeout(function() {
+                    failureSound.play();
+                });
                 return false;
 
             } else {
 
+                /* check does we have an array in service */
                 if (!local.score.result.length) {
                     local.score.result = new Array(currentWord.length);
                 }
 
-                _.filter(currentWord, function(item, index){
-                  if(item === key) {
-                    local.score.result[index] = item;
-                  }
+                /* create new array with the same length as word length */
+                _.filter(currentWord, function(item, index) {
+                    if (item === key) {
+                        local.score.result[index] = item;
+                    }
 
                 });
 
-                successSound.play();
+                /* play sound */
+                $timeout(function() {
+                    successSound.play();
+                })
                 return true;
             }
 
@@ -69,7 +83,7 @@
     }
 
 
-    Service.$inject = ['wordsService'];
+    Service.$inject = ['wordsService', '$timeout'];
 
     app.service('userService', Service);
 

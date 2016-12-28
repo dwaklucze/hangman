@@ -1,7 +1,8 @@
 (function(){
 
   var Component = {
-    templateUrl: 'templates/hangman.html'
+    templateUrl: 'templates/hangman.html',
+    controller: 'hangmanController'
   }
 
   Component.$inject = [];

@@ -1,6 +1,8 @@
 (function() {
 
-    app.config(function($stateProvider, $urlRouterProvider) {
+    app.config(function($stateProvider, $urlRouterProvider, $compileProvider) {
+
+        $compileProvider.debugInfoEnabled(false);
 
         $urlRouterProvider.otherwise('/');
 
